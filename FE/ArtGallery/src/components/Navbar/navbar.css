@@ -1,0 +1,24 @@
+
+.navbar{
+    width: 100%;
+    background-color: #78A083;
+    border: 2px solid #132a13;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.icon{
+    color: #132a13;
+}
+
+.icon2{
+    color: #132a13;
+}
+
+.itemClass{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
