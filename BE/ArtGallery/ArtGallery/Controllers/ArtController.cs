@@ -32,6 +32,7 @@ namespace ArtGallery.Controllers
 
         [Route("getByName/{name}")]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> GetPaintsByName(string name)
         {
             try
@@ -105,7 +106,35 @@ namespace ArtGallery.Controllers
 
         }
 
+        [Route("getByAny/{paint}")]
+        [HttpPost]
+        public async Task<ActionResult> GetPaintsByAny(string paint)
+        {
+            try
+            {
 
+                List<Paint> result = await _mongoDBService.GetPaintsByAny(paint);
+                List<PaintDTO> paints = new List<PaintDTO>();
+
+                foreach (var p in result)
+                {
+                    PaintDTO paintDTO = new PaintDTO();
+                    paintDTO.Name = p.Name;
+                    paintDTO.Author = p.Author;
+                    paintDTO.Date = p.Date;
+                    paintDTO.Paints = p.Paints;
+                    paints.Add(paintDTO);
+
+                }
+                return Ok(paints);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
 
         //POST is non public
         [Authorize(Roles = "Admin")]

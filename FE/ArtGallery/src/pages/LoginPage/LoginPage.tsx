@@ -1,8 +1,8 @@
 import { Button, Card, Form, Input } from "antd";
 import { useDependencies } from "./hooks";
-import { LoginForm } from "./types";
 import './styles.css'
 import { UserOutlined, LockOutlined} from '@ant-design/icons';
+
 const LoginPage = () => {
 
     const { handleSubmit } = useDependencies();
@@ -15,9 +15,10 @@ const LoginPage = () => {
             <Card className="cardLogin">
                 <Form
                     onFinish={handleSubmit} className="card">
-
-
-
+                    <div style={{display:"flex", flexDirection:"row", justifyContent:"center"}}>
+                        <img src='src\assets\logo.png' style={{width:"50%", height:"50%"}}></img>
+                    </div>
+                    
                     <Form.Item
                         name="username"
                     >
@@ -26,8 +27,6 @@ const LoginPage = () => {
                             <Input />
                         </div>
                     </Form.Item>
-
-
                     <Form.Item
                         name="password"
                     >

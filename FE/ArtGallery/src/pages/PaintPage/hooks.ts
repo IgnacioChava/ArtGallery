@@ -1,5 +1,5 @@
 import { AxiosError } from "axios";
-import { getPaints, getPaintsByName } from "../../service/http.service";
+import { getPaints, getPaintsByAny, getPaintsByName } from "../../service/http.service";
 import { isNill } from "../../utils/comon.utils";
 import useNotificationHandler from "../../hooks/useNotificationHandler";
 
@@ -34,7 +34,7 @@ export const useDependencies = () =>{
     const handlePetitionByName = async (name: string) => {
 
 
-        const {failed, success, response} = await getPaintsByName(name); 
+        const {failed, success, response} = await getPaintsByAny(name); 
 
         console.log(response?.data);
 

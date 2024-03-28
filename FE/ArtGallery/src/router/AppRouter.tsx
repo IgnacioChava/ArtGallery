@@ -13,6 +13,7 @@ import Main from "../pages/Main/Main";
 const publicRoutes = () =>  {
     return (
         <Routes>
+            
             <Route path="/" element={<Main></Main>}>
 
                 <Route path="/login" element={<LoginPage></LoginPage>}></Route>
@@ -24,6 +25,7 @@ const publicRoutes = () =>  {
                 <Route path="/register" element={<RegisterPage></RegisterPage>}></Route>
 
             </Route>
+
         </Routes>
     );
 }

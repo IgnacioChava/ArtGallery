@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { useDependencies } from "./hooks"
 import { Paint } from "../../models/art.models";
-import { Button, Form, Input, Space, Spin } from "antd";
-import { isNill } from "../../utils/comon.utils";
+import { AutoComplete, Button, Card, Carousel, Form, Input, Space, Spin } from "antd";
+import { SearchOutlined } from '@ant-design/icons';
+import './styles.css'
+import Meta from "antd/es/card/Meta";
+
+const { Option } = AutoComplete;
 
 
 const PaintPage = () => {
@@ -77,26 +81,47 @@ const PaintPage = () => {
     return (
         <>
             {loading ? (
-                <>
-                    <Spin></Spin>
-                </>) : <>
-                <Space.Compact style={{ width: '100%', display: "flex", flexDirection: "row", justifyContent: "center" }}>
-                    <Form onFinish={getByName} style={{display: "flex",flexDirection: "row", justifyContent: "center" }}>
+                <div className="spinClass">
+                    <div className="loading">Loading&#8230;</div>
+                </div>) : <>
+                <Space.Compact style={{ width: '100%', display: "flex", flexDirection: "row", justifyContent: "center", marginTop: "10px" }}>
+                    <Form onFinish={getByName} style={{ display: "flex", flexDirection: "row", justifyContent: "center", gap: "5px" }}>
                         <Form.Item
-                            label="Name"
                             name="name"
                         >
-                            <Input type="text"/>
+                            <AutoComplete
+                                style={{ width: 200 }}
+                                placeholder="Paint name"
+                            >
+                                {paints?.map((paint, index) => (
+                                    <Option value={paint.name} key={index}>{paint.name}</Option>
+                                ))}
+
+                            </AutoComplete>
                         </Form.Item>
-                        <Button type="primary" htmlType="submit">Submit</Button>
+                        <Button type="primary" htmlType="submit"><SearchOutlined /></Button>
                     </Form>
                 </Space.Compact>
-                {paints?.map((paint, index) => (
-                    <div key={index}>
-                        <h2>{paint.name}</h2>
-                        <img style={{ width: "300px", margin: "0 auto" }} src={`data:image/png;base64,${paint.paints[0]}`} alt={'Imagen'} />
-                    </div>
-                ))}
+
+                <div className="paintsPage">
+                    {paints?.map((paint, index) => (
+                        <div key={index}>
+                            <Card className="cardPaint" hoverable 
+                            cover={
+                                <Carousel autoplay>
+                                        {paint.paints?.map((image, index) => (
+                                            <img className="imagePaint" src={`data:image/png;base64,${image}`} alt={'ImagenPintura'} />
+                                        ))}
+                                </Carousel>
+                            }>
+                                        <h4> Author: <span>{paint.name} </span></h4>
+                                        <h4> Date: <span>{paint.date} </span></h4>
+                            </Card>
+                        </div>
+                    ))}
+                </div>
+
+
             </>}
 
 

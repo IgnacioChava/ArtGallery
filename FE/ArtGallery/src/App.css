@@ -1,5 +1,4 @@
 html {
     height: 100%;
-    background: rgb(52, 73, 85);
-    background: linear-gradient(320deg, rgba(52, 73, 85, 1) 22%, rgba(80, 114, 123, 1) 75%);
+    background-image: linear-gradient(to left,pink,orange);
 }

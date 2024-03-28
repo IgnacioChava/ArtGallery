@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using Microsoft.IdentityModel.Tokens;
+using System.Linq;
 
 namespace ArtGallery.Services
 {
@@ -54,6 +55,12 @@ namespace ArtGallery.Services
         public async Task<List<Paint>> GetPaintsByDate(string date)
         {
             return await _paintingsCollection.Find(paint => paint.Date == date).ToListAsync();
+        }
+
+        public async Task<List<Paint>> GetPaintsByAny(string paintSe)
+        {
+            int lenghtPaint = paintSe.Length;
+            return await _paintingsCollection.Find( paint => paint.Name.Substring(0,lenghtPaint) == paintSe).ToListAsync();
         }
 
         public async Task<List<Paint>> GetPaintsByLetter(char letter)

@@ -8,8 +8,8 @@
     height: 70vh;
 }
 .cardLogin{
-   width: 50%;
-   height: 50%;
+   width: 30%;
+   height: 70%;
    background-color: #35374B;
    border: none;
    padding: 2%;
@@ -17,6 +17,14 @@
    flex-direction: column;
    justify-content: center;
    gap: 14px;
+}
+
+@media (max-width: 600px) {
+    .cardLogin{
+        width: 80%;
+        height: 80%;
+       
+     }
 }
 
 .buttonLogin{

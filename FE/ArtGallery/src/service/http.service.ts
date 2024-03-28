@@ -75,6 +75,22 @@ export const getPaintsByName = async (name :string) => {
 
 }
 
+export const getPaintsByAny = async (name :string) => {
+
+	let response;
+	let failed = false;
+	let success = !failed; 
+	try {
+		 const call = `/art/getByAny/${name}`
+		 response = await apiInstance.post<Paint[]>(call);
+		 return {response, failed, success}
+	} catch (error) {
+		failed = true;
+		return {error,failed, success}; // Lanza el error si ocurre uno
+	}
+
+}
+
 
 export const postLogin = async (values: Login) => {
 	let response;

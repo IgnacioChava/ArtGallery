@@ -1558,11 +1558,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nacho\\OneDrive\\Escritorio\\ArtGallery\\ArtGallery\\ArtGallery\\ArtGallery.csproj",
+      "projectUniqueName": "C:\\Users\\nacho\\OneDrive\\Escritorio\\ArtGallery\\BE\\ArtGallery\\ArtGallery\\ArtGallery.csproj",
       "projectName": "ArtGallery",
-      "projectPath": "C:\\Users\\nacho\\OneDrive\\Escritorio\\ArtGallery\\ArtGallery\\ArtGallery\\ArtGallery.csproj",
+      "projectPath": "C:\\Users\\nacho\\OneDrive\\Escritorio\\ArtGallery\\BE\\ArtGallery\\ArtGallery\\ArtGallery.csproj",
       "packagesPath": "C:\\Users\\nacho\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nacho\\OneDrive\\Escritorio\\ArtGallery\\ArtGallery\\ArtGallery\\obj\\",
+      "outputPath": "C:\\Users\\nacho\\OneDrive\\Escritorio\\ArtGallery\\BE\\ArtGallery\\ArtGallery\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nacho\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BBlab0J0bZC29Bxmx5djAr9pEft/8UHCslVcY844MdIe/3z5gyt2RWZ8meHFpEXPy33v9HwyPBJjYtq7+Xb8Jg==",
+  "dgSpecHash": "HM6E6emsLK+qzxEJBzWrgrnvunY6VpGXSSaSFSupgKik5OljEZyFjOfvCmT1FVnRcJxfquJaZHrAjbxoGUQ/7Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nacho\\OneDrive\\Escritorio\\ArtGallery\\ArtGallery\\ArtGallery\\ArtGallery.csproj",
+  "projectFilePath": "C:\\Users\\nacho\\OneDrive\\Escritorio\\ArtGallery\\BE\\ArtGallery\\ArtGallery\\ArtGallery.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nacho\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\nacho\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
